@@ -9,27 +9,17 @@ export default function Detail(){
                 Tenant details
            </Row>               
             <hr />
-            
-                    <Card className={styles.card}>
-                        {/* <div>
-                            <div className={styles.pic}>
-                                Pic
-                            </div>
-
-                            <div className={styles.detail}>
-                                details
-                            </div>
-                        </div> */}
-                        <Row>
-
-                        <Card.Img className={styles.pic} />
-                        <Card.Body >
-                                <Card.Text className={styles.detail}>
-                                    sadasd
-                                </Card.Text>
-                        </Card.Body>
-                        </Row>
-                    </Card>
+            <Card className={styles.card}>
+                <Row>
+                    <Card.Img className={styles.pic} />
+                    <Card.Body className={styles.detail}>
+                        <div><span>Company Name</span><input type="Text" placeholder='Enter The Company Name' /></div>                                                              
+                        <div><span>Address</span><input type="Text" placeholder='Enter The Address' /></div>
+                        <div><span>URL</span><input type="Text" placeholder='Enter The URL' /> </div>
+                        <div><span>Phone No. </span><input type="Text" placeholder='Enter The Phone No.' />   </div>  
+                    </Card.Body>
+                </Row>
+            </Card>
         </Layout>
     )
 }
