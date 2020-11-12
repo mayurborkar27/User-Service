@@ -1,0 +1,42 @@
+.navbar {
+  padding: 0%;
+}
+
+.table {
+  border-radius: 10px;
+  thead {
+    background-color: #0068691a !important;
+    border-radius: 10px;
+    tr {
+      th {
+        color: #707070;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  tbody {
+    background-color: #ffffff;
+    border-radius: 10px;
+    tr {
+      td {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: normal;
+        color: #707070;
+      }
+    }
+  }
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+// .row {
+//   margin-right: 0;
+//   margin-left: 0;
+// }

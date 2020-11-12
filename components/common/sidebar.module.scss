@@ -1,0 +1,35 @@
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #626f7f;
+  margin-top: 0;
+}
+
+.sidebar ul {
+  position: sticky;
+  top: 125px;
+  padding-left: 0;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.sidebar ul li {
+  color: white;
+  padding: 12px 24px;
+  list-style: none;
+  font-size: 24px;
+  font-family: Montserrat;
+  padding-left: 62px;
+}
+
+.sidebar ul li:hover {
+  font-size: 24px;
+  font-family: Montserrat;
+  font-weight: 600;
+  background-color: white !important;
+  border-radius: 10px;
+  color: #3d4060 !important;
+}
