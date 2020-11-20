@@ -1,0 +1,36 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 11px 64px 11px 18px;
+  color: #3d4060;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: normal;
+  span {
+    margin-right: 19px;
+  }
+
+  .btnNext {
+    background-image: url(../../public/ionic-ios-arrow-prev.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 38px;
+    height: 28px;
+    border: 1px solid #b1b3c1;
+    border-radius: 0px 6px 6px 0px;
+    background-color: #ffffff;
+  }
+
+  .btnPrev {
+    background-image: url(../../public/ionic-ios-arrow-prev.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    width: 38px;
+    height: 28px;
+    border: 1px solid #b1b3c1;
+    border-radius: 6px 0px 0px 6px;
+    background-color: #ffffff;
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "user-service",
+  "name": "proxima-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,12 @@
     "@material-ui/icons": "^4.9.1",
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.5.3",
+    "formik": "^2.2.5",
     "next": "10.0.0",
     "react": "17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "17.0.1",
+    "react-js-pagination": "^3.0.3",
     "sass": "^1.28.0"
   },
   "devDependencies": {

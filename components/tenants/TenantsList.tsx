@@ -1,21 +1,33 @@
-// import { Avatar } from "@material-ui/core";
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import Layout from "../common/Layout";
 import styles from "./TenantsList.module.scss"
 import List from '../../public/data.json'
 import Link from "next/link";
+import Pagination from '../pagination/Pagination'
+import { useState } from "react";
+
 
 export default function TenantsList() {
 
-    const userList = List.map((detail) => {
+    const [showPerPage, setShowPerPage] = useState(16)
+    const [pagination, setPagination] = useState({
+        start:0,
+        end:showPerPage
+    })
+
+    const onPaginationChange = (start, end) => {
+        setPagination({start: start , end: end})
+    }
+
+    const userList = List.slice(pagination.start,pagination.end).map((detail) => {
         return (
-            <tr key={detail.id}>
-                <td></td>
-                <td>{detail.name}</td>
-                <td>{detail.address}</td>
-                <td>{detail.url}</td>
-                <td>{detail.number}</td>
-            </tr>
+            <Row key={detail.id} className={styles.body}>
+                <Col>Logo</Col>
+                <Col>{detail.name}</Col>
+                <Col>{detail.address}</Col>
+                <Col>{detail.url}</Col>
+                <Col>{detail.number}</Col>
+            </Row>
         )
     })
 
@@ -32,22 +44,24 @@ export default function TenantsList() {
                     </div>
                 </div>
                 <hr />
+                <Row className={styles.tr}>
+                    <Col>Logo</Col>
+                    <Col>Tenant Name</Col>
+                    <Col>Address</Col>
+                    <Col>URL</Col>
+                    <Col>Phone. No</Col>
+                </Row>
+                <div>
+                    {userList}
+                </div>                
                 
-                    <Table >
-                        <thead className={styles.tr}>
-                            <tr>
-                                <th>Logo</th>
-                                <th>Tenant Name</th>
-                                <th>Address</th>
-                                <th>URL</th>
-                                <th>Phone. No</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {userList}
-                        </tbody>
-                    </Table>
-                
+                {/* <p>Pagination</p>     */}
+               <Pagination 
+               showPerPage={showPerPage} 
+               onPaginationChange={onPaginationChange}
+               total={List.length}
+               />
+
             </div>
         </Layout>
     )

@@ -8,6 +8,22 @@
   color: #434343;
 }
 
+.box {
+  width: 1200px;
+  height: 700px;
+  background-color: grey;
+}
+.container {
+  display: flex;
+}
+
+.img {
+  height: 271px;
+  width: 271px;
+  border-radius: 10px;
+  background-color: black;
+}
+
 // .card {
 //   height: 474px;
 //   width: 1186px;
@@ -20,8 +36,8 @@
 .card {
   border: 1px solid #f4f7fa;
   border-radius: 10px;
-  height: 474px;
-  width: 1184px;
+  height: 890px;
+  width: 1200px;
   margin: 14px 0 0 15px;
 }
 
@@ -29,7 +45,7 @@
   height: 271px;
   width: 271px;
   color: #ffffff;
-  margin: 30px 0 173px 35px;
+  margin: 30px 0 0 35px;
   border-radius: 10px;
   border: 1px solid #d6d7d8;
 }
@@ -37,7 +53,7 @@
 .detail {
   height: 290px;
   width: 800px;
-  margin: 30px 30px 154px 50px;
+  margin: 30px 30px 0 50px;
   display: flex;
   flex-direction: column;
 
@@ -46,7 +62,7 @@
     align-content: space-between;
   }
 
-  span {
+  label {
     color: #515151;
     font-family: Montserrat;
     font-size: 18px;
@@ -57,7 +73,7 @@
   }
 
   input {
-    width: 604px;
+    // width: 604px;
     height: 50px;
     margin-bottom: 30px;
     margin-left: 72px;
@@ -68,5 +84,18 @@
   }
   input::placeholder {
     color: #cfcfcf;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 44px;
+
+    Button {
+      height: 44px;
+      width: 198px;
+      border-radius: 10px;
+      margin: 50px 0 30px 25px;
+    }
   }
 }
