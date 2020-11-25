@@ -8,10 +8,10 @@ export default function Layout(props) {
         <div className={styles.layout_wrapper}>
             <Header />
             <Row className={styles.layout_row}>
-                <Col lg={2}>
+                <Col md={2}>
                    <Sideabar />
                 </Col>
-                <Col lg={10} className={styles.bg}>
+                <Col md={10} className={styles.bg}>
                    {props.children}
                 </Col>
             </Row>
