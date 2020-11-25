@@ -22,7 +22,17 @@ export default function Detail(){
             console.log('form data', values)
         },
         validate: values => {
-            let errors = {}
+            let errors = {
+                company_name: '',
+                address: '',
+                country: '',
+                state: '',
+                city: '',
+                street: '',
+                zipcode: '',
+                url: '',
+                number: ''
+            }
 
             if(!values.company_name) {
                 errors.company_name = "Required"
