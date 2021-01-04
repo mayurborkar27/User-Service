@@ -4,8 +4,8 @@ import { Row } from "react-bootstrap";
 import Layout from "../common/Layout";
 import CompanyUser from "./CompanyUser";
 import CustomerUser from "./CustomerUser";
-import styles from './UsersList.module.scss'
-import data from '../../public/UserData.json'
+import styles from './UsersList.module.scss';
+import data from '../../public/UserData.json';
 
 
 export default function UsersList() {
