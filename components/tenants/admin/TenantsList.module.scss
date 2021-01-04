@@ -43,19 +43,18 @@
   font-weight: 500;
   font-size: 20px;
   background-color: #0068691a;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   height: 50px;
   margin: 30px 64px 10px 17px;
   padding-left: 34px;
 }
 
 .body {
-  height: 50px;
+  height: 100%;
+  padding: 10px;
   background-color: #ffffff;
   font-family: Montserrat;
   border-radius: 10px;
-  // border-bottom: 1px solid grey;
-  // border: 1px solid grey;
   margin: 0 64px 0 17px;
   align-items: center;
   padding-left: 34px;
@@ -63,3 +62,8 @@
   font-size: 18px;
   font-weight: normal;
 }
+
+// .body1 {
+//   height: 100%;
+//   border-radius: 10px;
+// }

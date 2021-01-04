@@ -1,6 +1,6 @@
 .left {
   height: 37px;
-  width: 215px;
+  // width: 215px;
   font-size: 30px;
   font-family: Montserrat;
   font-weight: 500;
@@ -38,7 +38,7 @@
 
 .detail {
   height: 100%;
-  width: 800px;
+  width: 100%;
   margin: 30px 30px 0 50px;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,6 @@
 
   input {
     height: 50px;
-    // margin-bottom: 30px;
     margin-left: 72px;
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #d6d7d8;
@@ -83,18 +82,17 @@
       margin: 50px 0 30px 25px;
     }
   }
+
+  .detail__input {
+    display: flex;
+    flex-direction: column;
+  }
+  .detail__div {
+    margin-bottom: 15px;
+  }
 }
 
 .error {
   color: red;
-  // margin-bottom: 30px;
   margin-left: 72px;
-}
-
-.detail__input {
-  display: flex;
-  flex-direction: column;
-}
-.detail__div {
-  margin-bottom: 15px;
 }

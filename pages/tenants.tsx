@@ -1,4 +1,4 @@
-import TenantsList from "../components/tenants/TenantsList";
+import TenantsList from "../components/tenants/admin/TenantsList";
 
 export default function Tenants() {
     return(

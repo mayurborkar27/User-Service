@@ -1,13 +1,14 @@
-import '../styles/globals.css'
-import App from 'next/app';
+// import '../styles/globals.css'
+// import App from 'next/app';
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/styles.scss'
+import { ApolloProvider } from "@apollo/client";
+import { useApollo } from "../lib/apolloClient";
 
 
-export default class UserService extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+export default function App({Component, pageProps}) {
+    const apolloClient = useApollo(pageProps.initialApolloState);
 
     return (
       <>
@@ -19,10 +20,12 @@ export default class UserService extends App {
             rel="stylesheet"
           />
         </Head>
-        <>
-          <Component {...pageProps} />
-        </>
+  
+          <ApolloProvider client={apolloClient}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+      
       </>
     );
-  }
+  
 }

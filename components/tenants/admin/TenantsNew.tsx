@@ -1,15 +1,15 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
-import Layout from "../common/Layout";
-import styles from "./Detail.module.scss"
+import { Button, Col, Row } from "react-bootstrap";
+import Layout from "../../common/Layout";
+import styles from "./TenantsNew.module.scss"
 import { useFormik } from 'formik'
 import { Link } from "@material-ui/core";
  
-export default function Detail(){
+export default function TenantsNew(){
 
     const formik = useFormik({
         initialValues: {
             company_name: '',
-            address: '',
+            person: '',
             country: '',
             state: '',
             city: '',
@@ -24,7 +24,7 @@ export default function Detail(){
         validate: values => {
             let errors = {
                 company_name: '',
-                address: '',
+                person: '',
                 country: '',
                 state: '',
                 city: '',
@@ -37,8 +37,8 @@ export default function Detail(){
             if(!values.company_name) {
                 errors.company_name = "Required"
             }
-            if(!values.address) {
-                errors.address = "Required"
+            if(!values.person) {
+                errors.person = "Required"
             }
             if(!values.country) {
                 errors.country = "Required"
@@ -61,8 +61,6 @@ export default function Detail(){
             if(!values.number) {
                 errors.number = "Required"
             }
-
-
             return errors
         }
     })
@@ -76,7 +74,7 @@ export default function Detail(){
             <form onSubmit={formik.handleSubmit}>
                 <Row className={styles.card}>
                     <Row>
-                        <Col lg={3}>
+                        <Col md={3}>
                         <div className={styles.pic} >
                             <label htmlFor='input-file'>
                                 <img className={styles.addLogo} src="/addLogo.svg" />
@@ -85,7 +83,7 @@ export default function Detail(){
                         </div>
                         </Col>
                             
-                        <Col lg={9}>
+                        <Col md={9}>
                         <div className={styles.detail}>
                             <div className={styles.detail__div}>
                                 <label htmlFor='company name'>Company Name</label>
@@ -103,17 +101,17 @@ export default function Detail(){
                                 
                             </div>                                                              
                             <div className={styles.detail__div}>
-                                <label htmlFor='address'>Address</label>
+                                <label htmlFor='person'>Person Name</label>
                                 <div className={styles.detail__input}>
                                 <input 
                                     type="text" 
-                                    id='address' 
-                                    name='address' 
-                                    placeholder='Enter The Address' 
+                                    id='person' 
+                                    name='person' 
+                                    placeholder='Enter The Person name' 
                                     onChange={formik.handleChange} 
                                     onBlur={formik.handleBlur} 
-                                    value={formik.values.address} />
-                                    {formik.touched.address && formik.errors.address ? <span className={styles.error}>{formik.errors.address}</span> : null}
+                                    value={formik.values.person} />
+                                    {formik.touched.person && formik.errors.person ? <span className={styles.error}>{formik.errors.person}</span> : null}
                                 </div>
                                 
                             </div>
@@ -226,7 +224,7 @@ export default function Detail(){
                                 <Link href='/tenants'>
                                     <Button variant="outline-primary">Cancel</Button>
                                 </Link>
-                                <Button variant="outline-primary" type="submit">Submit</Button>
+                                <Button variant="outline-primary" type="submit">Save</Button>
                             </Row>
                         </div>
                         </Col>
