@@ -1,0 +1,44 @@
+.TopHead {
+  height: 37px;
+  font-size: 30px;
+  font-family: Montserrat;
+  font-weight: 500;
+  margin: 12px 0px 22px 15px;
+  color: #434343;
+  justify-content: space-between;
+
+  .BackLogo {
+    margin-right: 20px;
+  }
+
+  .right {
+    input {
+      border: 1px solid #cfcfcf;
+      border-radius: 10px;
+      height: 44px;
+      width: 300px;
+      margin-right: 29px;
+      padding-left: 20px;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      font-size: 18px;
+      font-family: Montserrat;
+    }
+  }
+}
+
+.btn {
+  border: hidden;
+  background-color: transparent;
+  margin-left: 30px;
+  // width: 250px;
+  height: 60px;
+}
+
+.text {
+  color: #515151;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-weight: 500;
+  margin-left: 10px;
+}
