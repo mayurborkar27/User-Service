@@ -26,56 +26,58 @@ export const ALL_TENANTS_DETAIL = gql`
 
 
 export default function TenantsList() {
-    const { loading, error, data } = useQuery(ALL_TENANTS_DETAIL);
-    console.log(data);
-    
     const [showPerPage, setShowPerPage] = useState(16)
     const [pagination, setPagination] = useState({
         start:0,
         end:showPerPage
     })
+
+    const { loading, error, data } = useQuery(ALL_TENANTS_DETAIL);
+    
+    if(loading) return 'Loading..'
+    if(error) return 'Error..!'
     
     const onPaginationChange = (start, end) => {
         setPagination({start: start , end: end})
     }
     
-    // const clients = data.Clients.clients.map((client) => {
-    //     return (
-    //         <Link
-    //             href='/detail/[client.primaryOperatorId]'
-    //             as={`/detail/${client.primaryOperatorId}`}
-    //             key={client.primaryOperatorId}>
-    //             <Row key={client.primaryOperatorId} className={styles.body}>
-    //                 <Col>
-    //                         <Avatar /> 
-    //                 </Col>
-    //                 <Col>{client.name}</Col>
-    //                 <Col>{client.address.country}</Col>
-    //                 <Col>{client.contractLink}</Col>
-    //                 <Col></Col>
-    //             </Row>
-    //         </Link>
-    //     )
-    // })
-
-    const userList = List.slice(pagination.start,pagination.end).map((detail) => {
+    const clients = data.Clients.clients.map((client) => {
         return (
-            <Link 
-                href='/detail/[detial.id]'
-                as={`/detail/${detail.id}`}
-                key={detail.id}>
-                <Row key={detail.id} className={styles.body}>
+            <Link
+                href='/detail/[client.primaryOperatorId]'
+                as={`/detail/${client.primaryOperatorId}`}
+                key={client.primaryOperatorId}>
+                <Row key={client.primaryOperatorId} className={styles.body}>
                     <Col>
-                        <Avatar /> 
+                            <Avatar /> 
                     </Col>
-                    <Col>{detail.name}</Col>
-                    <Col>{detail.address}</Col>
-                    <Col>{detail.url}</Col>
-                    <Col>{detail.number}</Col>
+                    <Col>{client.name}</Col>
+                    <Col>{client.address.country}</Col>
+                    <Col>{client.contractLink}</Col>
+                    <Col></Col>
                 </Row>
             </Link>
         )
     })
+
+    // const userList = List.slice(pagination.start,pagination.end).map((detail) => {
+    //     return (
+    //         <Link 
+    //             href='/detail/[detial.id]'
+    //             as={`/detail/${detail.id}`}
+    //             key={detail.id}>
+    //             <Row key={detail.id} className={styles.body}>
+    //                 <Col>
+    //                     <Avatar /> 
+    //                 </Col>
+    //                 <Col>{detail.name}</Col>
+    //                 <Col>{detail.address}</Col>
+    //                 <Col>{detail.url}</Col>
+    //                 <Col>{detail.number}</Col>
+    //             </Row>
+    //         </Link>
+    //     )
+    // })
 
     return (
         <Layout>
@@ -100,8 +102,8 @@ export default function TenantsList() {
                     <Col>Phone. No</Col>
                 </Row>
                 <div className={styles.body1}>
-                    {userList}
-                    {/* {clients} */}
+                    {/* {userList} */}
+                    {clients}
                 </div>                
                 
                 {/* <p>Pagination</p>     */}

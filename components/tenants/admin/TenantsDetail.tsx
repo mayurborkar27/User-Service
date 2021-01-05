@@ -25,39 +25,42 @@ export const ALL_TENANTS_DETAIL = gql`
 
 export default function TenantsDetail({ id }) {
     const { loading, error, data } = useQuery(ALL_TENANTS_DETAIL);
-    console.log(data);
+    // console.log(data);
     
-    // const client = data.Clients.clients.map((client,index) => {
-    //     if (id == client.primaryOperatorId ) {
-    //         return (
-    //             <Row className="pt-3" key={index} >
-    //                 <Col>
-    //                     <img src="/dumy logo.svg" />
-    //                 </Col>
-    //                 <Col>{client.name}</Col>
-    //                 <Col>{client.address.country}</Col>
-    //                 <Col>{client.contractLink}</Col>
-    //                 <Col></Col>
-    //             </Row> 
-    //         )
-    //     }
-    // })
+    if(loading) return 'Loading..';
+    if(error) return 'Error..!';
 
-    const user = List.map((userDetail,index) => {
-        if (id == userDetail.id) {
-            return ( 
+    const client = data.Clients.clients.map((client,index) => {
+        if (id == client.primaryOperatorId ) {
+            return (
                 <Row className="pt-3" key={index} >
                     <Col>
                         <img src="/dumy logo.svg" />
                     </Col>
-                    <Col>{userDetail.name}</Col>
-                    <Col>{userDetail.address}</Col>
-                    <Col>{userDetail.url}</Col>
-                    <Col>{userDetail.number}</Col>
-                </Row>
-                )
+                    <Col>{client.name}</Col>
+                    <Col>{client.address.country}</Col>
+                    <Col>{client.contractLink}</Col>
+                    <Col></Col>
+                </Row> 
+            )
         }
     })
+
+    // const user = List.map((userDetail,index) => {
+    //     if (id == userDetail.id) {
+    //         return ( 
+    //             <Row className="pt-3" key={index} >
+    //                 <Col>
+    //                     <img src="/dumy logo.svg" />
+    //                 </Col>
+    //                 <Col>{userDetail.name}</Col>
+    //                 <Col>{userDetail.address}</Col>
+    //                 <Col>{userDetail.url}</Col>
+    //                 <Col>{userDetail.number}</Col>
+    //             </Row>
+    //             )
+    //     }
+    // })
 
     return (
         <Layout>
@@ -76,8 +79,8 @@ export default function TenantsDetail({ id }) {
                 </Row>
                 <div className={styles.body}>
                     <div>
-                        {user}
-                        {/* {client} */}
+                        {/* {user} */}
+                        {client}
                         <div className={styles.body__btn}>
                             <Button variant="outline-primary" className={styles.btn}>Edit</Button>
                             <Button variant="outline-primary" className={styles.btn}>Delete</Button>
