@@ -23,12 +23,17 @@ export const ALL_TENANTS_DETAIL = gql`
   `;
 
 
-export default function TenantsDetail({ id }) {
+export default function TenantsDetail({ id })  {
     const { loading, error, data } = useQuery(ALL_TENANTS_DETAIL);
-    // console.log(data);
     
-    if(loading) return 'Loading..';
-    if(error) return 'Error..!';
+    if (loading) return <>
+    <span>Loading</span>
+    </>;
+    if (error) return (
+        <>
+        <span>Error</span>
+        </>
+    );
 
     const client = data.Clients.clients.map((client,index) => {
         if (id == client.primaryOperatorId ) {

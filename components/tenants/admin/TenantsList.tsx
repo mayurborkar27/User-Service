@@ -34,8 +34,14 @@ export default function TenantsList() {
 
     const { loading, error, data } = useQuery(ALL_TENANTS_DETAIL);
     
-    if(loading) return 'Loading..'
-    if(error) return 'Error..!'
+    if (loading) return <>
+    <span>Loading</span>
+    </>;
+    if (error) return 
+        <>
+        <span>Error</span>
+        </>
+    ;
     
     const onPaginationChange = (start, end) => {
         setPagination({start: start , end: end})
